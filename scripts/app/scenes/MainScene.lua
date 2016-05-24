@@ -8,6 +8,18 @@ function MainScene:ctor()
 		en = 1,
 		zhs = 1,
 		zht = 1,
+		fr = 1, --法语
+		de = 1, --德语
+		it = 1, --意大利
+		ko = 1, --韩语
+		nl = 1, --荷兰
+		pt = 1, --葡萄牙
+		ru = 1, --俄语
+		es = 1, --西班牙语
+		tr = 1, --土耳其语
+		ja = 1, --日语
+		id = 1, --印尼
+		ar = 1, --阿拉伯
 	}
 
 	local newItem1 = ui.newTTFLabelMenuItem({listener = handler(self,self.distribute),text = "分发", size = 30})
@@ -21,6 +33,7 @@ end
 
 function MainScene:onEnter()
 	lfs.checkDir("born2play/Solitaire")
+	
 end
 
 function MainScene:openLanguage_()
@@ -39,7 +52,7 @@ function MainScene:distribute()
 		for languageKey,v in pairs(self.support) do
 			if not lanList[languageKey] or lanList[languageKey] == "" then
 				--有需要翻译的内容
-				-- printf("%s 需要被翻译成 %s",keyTitle,languageKey)
+				printf("%s 需要被翻译成 %s",keyTitle,languageKey)
 				if not needTranList[languageKey] then
 					needTranList[languageKey] = {}
 				end
